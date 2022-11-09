@@ -7,7 +7,10 @@
 #include "mmu.h"
 
 #include "VV.h"
+
+#ifndef __VCS
 #include "verilated_fst_c.h"
+#endif
 
 #include "simple_sim.h"
 #include "vbridge_impl.h"

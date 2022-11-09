@@ -1,17 +1,21 @@
 #pragma once
 
+#include <list>
 #include <queue>
 #include <optional>
 
 #include "mmu.h"
-
-#include "VV.h"
-#include "verilated_fst_c.h"
-
 #include "spike_event.h"
 #include "simple_sim.h"
 #include "rtl_event.h"
 #include "vbridge_config.h"
+
+#include "VV.h"
+
+#ifndef __VCS
+#include "verilated_fst_c.h"
+#endif
+
 
 class SpikeEvent;
 
@@ -42,12 +46,13 @@ public:
   void configure_simulator(int argc, char **argv);
 
   void run();
+  void loop();
 
   uint8_t load(uint64_t address);
 
+  VV top;
 private:
   VerilatedContext ctx;
-  VV top;
   VerilatedFstC tfp;
   simple_sim sim;
   isa_parser_t isa;

@@ -4,7 +4,11 @@
 #include <optional>
 
 #include "VV.h"
+
+#ifndef __VCS
 #include "verilated_fst_c.h"
+#endif
+
 #include "mmu.h"
 #include "simple_sim.h"
 

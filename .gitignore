@@ -5,3 +5,5 @@ test_run_dir/
 .metals/
 .vscode/
 cmake-build-*
+verdiLog/
+novas.*
